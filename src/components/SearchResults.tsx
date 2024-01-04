@@ -27,7 +27,7 @@ const SearchResults = () => {
 
   const handleSearch = async (searchKeyword: string): Promise<void> => {
     try {
-      const apiURL = 'https://discover.sitecorecloud.io/discover/v2/34207332';
+      const apiURL = 'https://discover.sitecorecloud.io/discover/v2/<search domain id>';
 
       const requestBody = {
         context: {
