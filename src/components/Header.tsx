@@ -50,8 +50,11 @@ const Header = ({ fields }: HeaderProps): JSX.Element => (
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-          {fields?.items?.map((navItem: navListModel) => (
-            <li className={`nav-item ${navItem?.fields?.items?.length > 1 ? 'dropdown' : ''}`}>
+          {fields?.items?.map((navItem: navListModel, i) => (
+            <li
+              key={i}
+              className={`nav-item ${navItem?.fields?.items?.length > 1 ? 'dropdown' : ''}`}
+            >
               <JssLink
                 field={navItem?.fields?.hyperLink}
                 className={`nav-link ${
@@ -66,10 +69,12 @@ const Header = ({ fields }: HeaderProps): JSX.Element => (
                   aria-labelledby="navbarDropdownBlog"
                 >
                   {navItem.fields.items &&
-                    navItem.fields?.items?.map((subNavItem: subNavListModel) => (
-                      <li>
-                        <JssLink field={subNavItem?.fields?.hyperLink} className="dropdown-item">
-                        </JssLink>
+                    navItem.fields?.items?.map((subNavItem: subNavListModel, j) => (
+                      <li key={j}>
+                        <JssLink
+                          field={subNavItem?.fields?.hyperLink}
+                          className="dropdown-item"
+                        ></JssLink>
                       </li>
                     ))}
                 </ul>

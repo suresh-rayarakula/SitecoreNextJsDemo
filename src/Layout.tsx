@@ -6,8 +6,6 @@ import {
   getPublicUrl,
   LayoutServiceData,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-import Navigation from 'src/Navigation';
-
 // Prefix public assets with a public URL to enable compatibility with Sitecore editors.
 // If you're not supporting Sitecore editors, you can remove this.
 const publicUrl = getPublicUrl();
